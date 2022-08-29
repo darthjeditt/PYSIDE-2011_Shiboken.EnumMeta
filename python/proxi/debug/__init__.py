@@ -7,7 +7,7 @@ import time
 import proxi.dev as dev
 import proxi.console as console
 
-from lib.decorator import decorator
+from decorator import decorator
 
 
 

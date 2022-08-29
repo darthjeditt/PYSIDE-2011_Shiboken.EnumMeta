@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 import datetime
-import console
+from proxi import console
 
 
 def __ensureString__(obj: object) -> str:

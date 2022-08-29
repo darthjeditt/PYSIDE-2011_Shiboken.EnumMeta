@@ -5,9 +5,9 @@ from __future__ import annotations
 
 import traceback
 import datetime
-import dev as dev
+from proxi import dev as dev
 from types import TracebackType
-from config.timeFormats import TimeFormats
+from proxi.config.timeFormats import TimeFormats
 
 
 # TODO: Set up cloud provider and patch in a structured logger. Eg `Seq` or similar

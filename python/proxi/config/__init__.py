@@ -4,12 +4,11 @@
 from __future__ import annotations
 
 import os
-import dev as dev
-import common.strings as strings
+import proxi.dev as dev
+import proxi.common.strings as strings
 
 from .fileTypes import FileTypes
 from .paths import Paths
-from .shotgun import Shotgun
 
 
 def getUiPrefsPath(uiFilename: str=None, toolName: str=None) -> str:

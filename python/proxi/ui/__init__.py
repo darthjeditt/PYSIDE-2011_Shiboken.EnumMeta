@@ -6,9 +6,9 @@ from __future__ import annotations
 import os
 import sys
 import importlib.util as importUtil
-import dev
-import console
-import ui.resources.proxiQtResources as proxiQtResources
+from proxi import dev
+from proxi import console
+import proxi.ui.resources.proxiQtResources as proxiQtResources
 # import qt_material
 # import proxiStyle_css as css
 from PySide6 import QtGui, QtWidgets

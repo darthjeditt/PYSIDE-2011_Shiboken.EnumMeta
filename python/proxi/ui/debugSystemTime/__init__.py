@@ -1,15 +1,13 @@
-#!/usr/bin/env python
 from __future__ import annotations
 
-import sys
 import os
 import typing
 import datetime
-import dev
-import config
-import ui
-import debugSystemTime_ui as window
-import debugSystemTime_css as css
+from proxi import dev
+from proxi import config
+from proxi import ui
+from . import debugSystemTime_ui as window
+from . import debugSystemTime_css as css
 
 dev.reloadModules([
     # 'proxi.models', # must come first
@@ -21,23 +19,16 @@ dev.reloadModules([
     'proxi.ui.wrappers.mainWindow'
 ])
 
-from wrappers.mainWindow import QtMainWindowWrapper
+from proxi.ui.wrappers.mainWindow import QtMainWindowWrapper
 from PySide6 import (
     # QtGui,
     # QtCore,
     QtWidgets
 )
 
-try:
-    from PySide6.QtCore import QLibraryInfo, qVersion
-    from PySide6.QtWidgets import QApplication,QWidget
-except ImportError:
-    from PySide2.QtCore import QLibraryInfo, qVersion
-    from PySide2.QtWidgets import QApplication,QWidget
 
-class Window(QWidget):
+class Window(QtMainWindowWrapper):
     def __init__(self, parent=None):
-        super(Window, self).__init__()
 
         if typing.TYPE_CHECKING:
             self.ui = window._TypeHint()
@@ -109,13 +100,3 @@ class Window(QWidget):
         self.systemTimeCounter = 0
         self.unrealTickTimeCounter = 0
         self.ticks = []
-
-
-if __name__ == '__main__':
-    print('Python {}.{}'.format(sys.version_info[0], sys.version_info[1]))
-    print(QLibraryInfo.build())
-    app = QApplication(sys.argv)
-    window = Window()
-    window.setWindowTitle(qVersion())
-    window.show()
-    sys.exit(app.exec_())
