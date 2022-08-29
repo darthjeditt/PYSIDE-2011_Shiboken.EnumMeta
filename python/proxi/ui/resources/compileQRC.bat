@@ -1,0 +1,1 @@
+"C:\GIT\proxi-unreal\python\lib\PySide6\rcc.exe" proxiQtResources.qrc -g python -o proxiQtResources.py

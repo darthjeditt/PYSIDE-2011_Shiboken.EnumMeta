@@ -1,0 +1,9 @@
+<RCC>
+  <qresource>
+    <file>images/proxi_favicon_150.png</file>
+    <file alias="favicon.png">images/proxi_favicon_512.png</file>
+    <file alias="logo.png">images/proxi_logo_large.jpg</file>
+    <file alias="upload.svg">images/cloud_upload_white_24dp.svg</file>
+    <file alias="download.svg">images/cloud_download_white_24dp.svg</file>
+  </qresource>
+</RCC>
