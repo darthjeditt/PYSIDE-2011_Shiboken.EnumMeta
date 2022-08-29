@@ -84,7 +84,7 @@ def QtWindowBaseFactory(baseType: Type[QtWidgets.QMainWindow|QtWidgets.QDialog]|
             self.persistentPrefsMapping = []
 
             # Fetch ShotGrid project ID (if any)
-            self.defaultProject = config.getShotgridProjectId()
+            # self.defaultProject = config.getShotgridProjectId()
 
             # Setup UI
             self.ui = uiClass() # type: ignore
