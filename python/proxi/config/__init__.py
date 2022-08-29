@@ -9,7 +9,6 @@ import common.strings as strings
 
 from .fileTypes import FileTypes
 from .paths import Paths
-from .shotgun import Shotgun
 
 
 def getUiPrefsPath(uiFilename: str=None, toolName: str=None) -> str:
@@ -46,14 +45,3 @@ def getUiFilePath(pyFile: str) -> str:
     '''
 
     return '{}.{}'.format(os.path.splitext(pyFile)[0], FileTypes.qt)
-
-
-def getShotgridProjectId():
-    '''Get the current ShotGrid project ID from loaded environment variable. If `DEV_MODE`, return configured `debug project`'''
-
-    bootstrapperProject = strings.toInt(os.environ.get('PROXI_SHOTGUN_PROJECT_ID'))
-
-    if not dev.DEV_MODE or bootstrapperProject in Shotgun.devPassThroughProjects:
-        return bootstrapperProject
-    else:
-        return Shotgun.debugProjectId
